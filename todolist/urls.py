@@ -17,8 +17,8 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from rest_framework_swagger.views import get_swagger_view
 from rest_framework.routers import DefaultRouter
-from todos.views import TodoViewSet
-from users.views import UserViewSet
+from todolist.todos.views import TodoViewSet
+from todolist.users.views import UserViewSet
 
 
 router = DefaultRouter()
