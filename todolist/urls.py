@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from rest_framework.authtoken.views import obtain_auth_token
 from rest_framework_swagger.views import get_swagger_view
 from rest_framework.routers import DefaultRouter
 from todolist.todos.views import TodoViewSet
@@ -40,6 +41,7 @@ urlpatterns = [
     url(r'^', include(router.urls)),
     url(r'^admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^api-token/', obtain_auth_token, name='api-token'),
     url(r'^docs/', schema_view),
 ]
 
